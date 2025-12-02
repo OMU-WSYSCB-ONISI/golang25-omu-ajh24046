@@ -1,1 +1,79 @@
-Sample Test File over Golang http.FileServer
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLの練習場所！</title>
+    <script>
+        function updateClock() {
+            // 現在時刻を取得
+            var now = new Date();
+            var years = now.getFullYear();
+            var months = now.getMonth() + 1;
+            var dates = now.getDate();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            // 1桁の場合は0を付ける
+            if (months < 10) months = '0' + months;
+            if (dates < 10) dates = '0' + dates
+            if (hours < 10) hours = '0' + hours;
+            if (minutes < 10) minutes = '0' + minutes;
+            if (seconds < 10) seconds = '0' + seconds;
+
+            // 時刻を表示
+            var dateString = years + '/' + months + '/' + dates;
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('Date').innerHTML = dateString;
+            document.getElementById('clock').innerHTML = timeString;
+        }
+
+        // 1秒ごとにupdateClock関数を実行
+        setInterval(updateClock, 1000);
+
+        // ページ読み込み時に即座に表示
+        window.onload = updateClock;
+    </script>
+</head>
+<body>
+    <h1><span style="color:yellow";>現在時刻</span></h1>
+    <div id="Date" style="font-size: 24px; font-weight: bold; color: black;">
+        0000/00/00
+    </div>
+    <div id="clock" style="font-size: 24px; font-weight: bold; color: green;">
+        00:00:00
+    </div>
+    <h1>🌐 Phase 0-1: HTML基礎確認</h1>
+
+    <div>
+        <img src="school_kokuban_happyou_tenkousei_man.png" width="100" height="100" alt="トップ画像">
+        <h2>📝 課題1: 自己紹介セクション作成</h2>
+        <p><strong>指示:</strong> 下記のHTMLコメント部分に、あなたの自己紹介を書いてください。</p>
+        例:
+        <h3>自己紹介</h3>
+        <p>名前: 岩井孝太郎</p>
+        <p>職業: 大学生</p>
+        <p>趣味: プログラミング、読書</p>
+        <p>✅ 完了したら、この課題は終了です</p>
+    </div>
+
+    <div>
+        <h2>📋 課題2: リスト作成</h2>
+        <p><strong>指示:</strong> 好きな食べ物を5つ、番号付きリスト（ol）で作成してください。</p>
+        <!-- ここに好きな食べ物のリストを作成してください -->
+    </div>
+
+    <div>
+        <h2>🔗 課題3: リンク作成</h2>
+        <p><strong>指示:</strong> 以下のリンクを作成してください：</p>
+        <ul>
+            <li>Google（新しいタブで開く）</li>
+            <li>GitHub（新しいタブで開く）</li>
+        </ul>
+        <br><button onclick="alert('クリックされました！')">クリック</button>
+        <!-- ここにリンクを作成してください -->
+        <br><a href="second.html">2ページ目へ</a>
+    </div>
+</body>
+</html>
